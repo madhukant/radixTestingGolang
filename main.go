@@ -40,7 +40,7 @@ func initDB(connString string, poolNum int) error {
 	contSTR := []string{connString}
 	customConnFunc := func(Network, contSTR string) (radix.Conn, error) {
 		return radix.Dial(Network, contSTR,
-			radix.DialTimeout(1*time.Minute),
+			radix.DialTimeout(5*time.Second),
 		)
 	}
 
